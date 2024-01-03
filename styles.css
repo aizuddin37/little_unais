@@ -10,7 +10,7 @@
 
 * {
   padding: 0;
-  margin: 0;
+  margin: 20;
   box-sizing: border-box;
 }
 
@@ -92,7 +92,7 @@ nav {
 
 .nav__header {
   padding: 1rem;
-  width: 100%;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -133,6 +133,7 @@ nav {
 .nav__links.open {
   transform: translateY(0);
   background-color: #f2b600;
+  width: 550px;
 }
 
 .link a {
@@ -395,6 +396,7 @@ nav {
 
   .nav__header {
     padding: 0;
+
     background-color: transparent;
   }
 
@@ -489,7 +491,7 @@ nav {
   }
 
   .swiper-pagination-bullet-active {
-    background-color: var(--primary-color-dark);
+    background-color: var(--primary-color-light);
   }
   .class__grid {
     grid-template-columns: repeat(4, 1fr);
@@ -536,30 +538,52 @@ nav {
   }
   .image__content.image__content__1 {
     transform: translate(
-      calc(-50% - 10rem),
+      calc(-50% - 20rem),
       calc(-50% - 10rem)
     ); /* Adjust values for smaller screens */
   }
   .price__card {
     padding: 2rem;
   }
+  .project__grid {
+    grid-template-columns: repeat(3, 3fr);
+  }
+  .project__card img {
+    max-width: 100%; /* Ensures the image doesn't exceed its parent container */
+    max-height: 500px; /* Sets the maximum height of the image */
+    width: 500px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 }
-@media (width > 480px) {
+@media (width < 560px) {
   .container {
     max-width: auto;
   }
   .project__grid {
-    grid-template-columns: repeat(2, 2fr);
+    grid-template-columns: repeat(3, 3fr);
   }
 
   .image__content.image__content__1 {
-    transform: translate(calc(-50% - 10rem), calc(-50% + 10rem));
+    transform: translate(calc(-50% + 13rem), calc(-50% - 5rem));
   }
   .image__content.image__content__2 {
     transform: translate(calc(-50% + 10rem), calc(-50% + 10rem));
   }
+  .project__nav {
+    max-width: 180%;
+    width: 1000px;
+  }
   .project__card img {
-    max-width: max-content;
-    object-fit: cover;
+    max-width: 150%; /* Ensures the image doesn't exceed its parent container */
+    max-height: 500px; /* Sets the maximum height of the image */
+    width: 500px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .nav__header {
+    padding: 0;
+    width: 500px;
+    background-color: transparent;
   }
 }
